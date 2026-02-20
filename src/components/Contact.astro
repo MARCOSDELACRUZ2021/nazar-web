@@ -1,0 +1,109 @@
+---
+---
+
+<section class="contact" id="contacto">
+	<div class="contact__inner container">
+		<div class="contact__left animate-on-scroll">
+			<img src="/images/contacto.png" alt="Apretón de manos" class="contact__image" />
+		</div>
+
+		<form class="contact__form animate-on-scroll" id="contact-form">
+			<h2 class="contact__title"></h2>
+
+			<div class="contact__form-group">
+				<label class="contact__label" for="name">Nombre</label>
+				<input 
+					type="text" 
+					id="name" 
+					name="name" 
+					class="contact__input" 
+					placeholder=""
+					required 
+					autocomplete="name"
+				/>
+			</div>
+			<div class="contact__form-row">
+				<div class="contact__form-group">
+					<label class="contact__label" for="email">Correo</label>
+					<input 
+						type="email" 
+						id="email" 
+						name="email" 
+						class="contact__input" 
+						placeholder=""
+						required 
+						autocomplete="email"
+					/>
+				</div>
+				<div class="contact__form-group">
+					<label class="contact__label" for="phone">Teléfono</label>
+					<input 
+						type="tel" 
+						id="phone" 
+						name="phone" 
+						class="contact__input" 
+						placeholder=""
+						autocomplete="tel"
+					/>
+				</div>
+			</div>
+			<div class="contact__form-group">
+				<label class="contact__label" for="service">¿En qué te puedo ayudar?</label>
+				<textarea 
+					id="service" 
+					name="service" 
+					class="contact__input contact__textarea" 
+					placeholder=""
+					rows="3"
+					required
+				></textarea>
+			</div>
+			<button type="submit" class="contact__submit" id="submit-btn">
+				ENVIAR
+			</button>
+			<p class="contact__success" id="form-success" style="display:none;">
+				¡Gracias! Tu mensaje ha sido enviado. Nos pondremos en contacto contigo pronto.
+			</p>
+		</form>
+	</div>
+</section>
+
+
+
+<script>
+	const form = document.getElementById('contact-form') as HTMLFormElement;
+	const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
+	const successMsg = document.getElementById('form-success') as HTMLParagraphElement;
+	const submitText = form?.querySelector('.contact__submit-text') as HTMLSpanElement;
+	const submitLoading = form?.querySelector('.contact__submit-loading') as HTMLSpanElement;
+
+	form?.addEventListener('submit', async (e) => {
+		e.preventDefault();
+		submitBtn.disabled = true;
+		submitText.style.display = 'none';
+		submitLoading.style.display = 'inline';
+
+		const formData = new FormData(form);
+		const data = Object.fromEntries(formData.entries());
+		
+		try {
+			await new Promise(resolve => setTimeout(resolve, 1500));
+			console.log('Form data:', data);
+			
+			form.reset();
+			successMsg.style.display = 'block';
+			submitText.style.display = 'inline';
+			submitLoading.style.display = 'none';
+			submitBtn.disabled = false;
+
+			setTimeout(() => {
+				successMsg.style.display = 'none';
+			}, 5000);
+		} catch (error) {
+			console.error('Error:', error);
+			submitText.style.display = 'inline';
+			submitLoading.style.display = 'none';
+			submitBtn.disabled = false;
+		}
+	});
+</script>

@@ -1,0 +1,342 @@
+---
+import '../styles/main.css';
+
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const { 
+	title = "nazar.mx", 
+	description = "El crecimiento es exponencial, o no lo es. Consultor, empresario, profesor y líder cívico en Chiapas, México." 
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content={description} />
+		<meta name="theme-color" content="#0a0a0a" />
+		
+		<!-- Open Graph -->
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:type" content="website" />
+		<meta property="og:locale" content="es_MX" />
+
+		<!-- Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
+
+		<title>{title}</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+	@font-face {
+		font-family: 'Reenie Beanie';
+		src: url('/fonts/ReenieBeanie-Regular.ttf') format('truetype');
+		font-weight: 400;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: 'Plus Jakarta Sans';
+		src: url('../assets/fonts/PlusJakartaSans-ExtraLight.ttf') format('truetype');
+		font-weight: 200;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: 'Plus Jakarta Sans';
+		src: url('../assets/fonts/PlusJakartaSans-ExtraLightItalic.ttf') format('truetype');
+		font-weight: 200;
+		font-style: italic;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: 'Plus Jakarta Sans';
+		src: url('../assets/fonts/PlusJakartaSans-Light.ttf') format('truetype');
+		font-weight: 300;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: 'Plus Jakarta Sans';
+		src: url('../assets/fonts/PlusJakartaSans-LightItalic.ttf') format('truetype');
+		font-weight: 300;
+		font-style: italic;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: 'Plus Jakarta Sans';
+		src: url('../assets/fonts/PlusJakartaSans-Regular.ttf') format('truetype');
+		font-weight: 400;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: 'Plus Jakarta Sans';
+		src: url('../assets/fonts/PlusJakartaSans-Italic.ttf') format('truetype');
+		font-weight: 400;
+		font-style: italic;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: 'Plus Jakarta Sans';
+		src: url('../assets/fonts/PlusJakartaSans-Medium.ttf') format('truetype');
+		font-weight: 500;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: 'Plus Jakarta Sans';
+		src: url('../assets/fonts/PlusJakartaSans-MediumItalic.ttf') format('truetype');
+		font-weight: 500;
+		font-style: italic;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: 'Plus Jakarta Sans';
+		src: url('../assets/fonts/PlusJakartaSans-SemiBold.ttf') format('truetype');
+		font-weight: 600;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: 'Plus Jakarta Sans';
+		src: url('../assets/fonts/PlusJakartaSans-SemiBoldItalic.ttf') format('truetype');
+		font-weight: 600;
+		font-style: italic;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: 'Plus Jakarta Sans';
+		src: url('../assets/fonts/PlusJakartaSans-Bold.ttf') format('truetype');
+		font-weight: 700;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: 'Plus Jakarta Sans';
+		src: url('../assets/fonts/PlusJakartaSans-BoldItalic.ttf') format('truetype');
+		font-weight: 700;
+		font-style: italic;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: 'Plus Jakarta Sans';
+		src: url('../assets/fonts/PlusJakartaSans-ExtraBold.ttf') format('truetype');
+		font-weight: 800;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: 'Plus Jakarta Sans';
+		src: url('../assets/fonts/PlusJakartaSans-ExtraBoldItalic.ttf') format('truetype');
+		font-weight: 800;
+		font-style: italic;
+		font-display: swap;
+	}
+
+	/* ===== CSS Custom Properties ===== */
+	:root {
+		--color-bg: #fafaf9;
+		--color-bg-dark: #0a0a0a;
+		--color-bg-card: #ffffff;
+		--color-text: #1a1a1a;
+		--color-text-muted: #6b6b6b;
+		--color-text-light: #999999;
+		--color-accent: #c8a97e;
+		--color-accent-light: #e8d5b5;
+		--color-accent-dark: #a88a5e;
+		--color-border: #e8e8e8;
+		--color-border-light: #f0f0f0;
+		--font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+		--font-serif: 'Playfair Display', Georgia, serif;
+		--nav-height: 96px;
+		--section-padding: 100px;
+		--section-padding-lg: 140px;
+		--radius-sm: 8px;
+		--radius-md: 16px;
+		--radius-lg: 24px;
+		--radius-full: 9999px;
+		--shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+		--shadow-md: 0 4px 20px rgba(0,0,0,0.08);
+		--shadow-lg: 0 12px 40px rgba(0,0,0,0.12);
+		--transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	}
+
+	/* ===== CSS Reset ===== */
+	*, *::before, *::after {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	html {
+		scroll-behavior: smooth;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+
+	body {
+		font-family: var(--font-sans);
+		font-weight: 400;
+		color: var(--color-text);
+		background-color: var(--color-bg);
+		line-height: 1.6;
+		overflow-x: hidden;
+	}
+
+	img {
+		max-width: 100%;
+		height: auto;
+		display: block;
+	}
+
+	a {
+		text-decoration: none;
+		color: inherit;
+	}
+
+	ul, ol {
+		list-style: none;
+	}
+
+	button, input, textarea, select {
+		font-family: inherit;
+		font-size: inherit;
+		border: none;
+		outline: none;
+		background: none;
+	}
+
+	/* ===== Tipografía utilitaria ===== */
+	.font-serif {
+		font-family: var(--font-serif);
+	}
+
+	.font-sans {
+		font-family: var(--font-sans);
+	}
+
+	/* ===== Contenedor ===== */
+	.container {
+		width: 100%;
+		max-width: 1240px;
+		margin: 0 auto;
+		padding: 0 24px;
+	}
+
+	@media (min-width: 768px) {
+		.container {
+			padding: 0 48px;
+		}
+	}
+
+	@media (min-width: 1200px) {
+		.container {
+			padding: 0 64px;
+		}
+	}
+
+	/* ===== Section Tag ===== */
+	.section-tag {
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
+		font-size: 12px;
+		font-weight: 600;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		color: var(--color-accent-dark);
+		margin-bottom: 20px;
+	}
+
+	.section-tag::before {
+		content: '';
+		display: inline-block;
+		width: 24px;
+		height: 1.5px;
+		background: var(--color-accent);
+	}
+
+	/* ===== Animaciones ===== */
+	@keyframes fadeInUp {
+		from {
+			opacity: 0;
+			transform: translateY(30px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	@keyframes fadeIn {
+		from { opacity: 0; }
+		to { opacity: 1; }
+	}
+
+	@keyframes slideInLeft {
+		from {
+			opacity: 0;
+			transform: translateX(-40px);
+		}
+		to {
+			opacity: 1;
+			transform: translateX(0);
+		}
+	}
+
+	@keyframes scaleIn {
+		from {
+			opacity: 0;
+			transform: scale(0.9);
+		}
+		to {
+			opacity: 1;
+			transform: scale(1);
+		}
+	}
+
+	.animate-on-scroll {
+		opacity: 0;
+		transform: translateY(300px);
+		transition: opacity 0.8s ease, transform 0.8s ease;
+	}
+
+	.animate-on-scroll.visible {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	/* ===== Selection color ===== */
+	::selection {
+		background: var(--color-accent-light);
+		color: var(--color-text);
+	}
+</style>
