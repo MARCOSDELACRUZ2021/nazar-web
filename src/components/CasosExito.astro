@@ -1,0 +1,76 @@
+---
+const casos = [
+  {
+    empresa: "Chiaplast",
+    tema: "Programa de sucesión de alta dirección",
+    resultado:
+      "Transición ordenada de liderazgo y profesionalización estructural.",
+    variante: "dark",
+  },
+  {
+    empresa: "Tacos Sr Rodeo",
+    tema: "Consolidación del modelo de expansión",
+    resultado: "Diseño de sistema para escalabilidad y crecimiento regional.",
+    variante: "gray",
+  },
+  {
+    empresa: "Codisel",
+    tema: "Implementación del Algoritmo de Crecimiento Exponencial",
+    resultado:
+      "Alineación estratégica, mejora de rentabilidad y claridad operativa.",
+    variante: "white",
+  },
+  {
+    empresa: "Hampton School",
+    tema: "Desarrollo de nuevo negocio",
+    resultado:
+      "Diseño de marca, headhunting y acompañamiento de operación inicial.",
+    variante: "white",
+  },
+  {
+    empresa: "L2BE Group",
+    tema: "Arquitectura de Consejo de Administración",
+    resultado:
+      "Creación, estructura y gestión de agenda del Consejo de Administración.",
+    variante: "dark",
+  },
+  {
+    empresa: "Adoblocks",
+    tema: "Transformación organizacional",
+    resultado: "Renovación de imagen, desarrollo organizacional.",
+    variante: "gray",
+  },
+];
+---
+
+<section class="casos" id="casos-exito">
+  <div class="casos__inner container">
+    <!-- Header con imagen y título -->
+    <div class="casos__header animate-on-scroll">
+      <div class="casos__header-visual">
+        <img
+          src="/images/consultor.png"
+          alt="Casos de éxito"
+          class="casos__header-img"
+        />
+        <h2 class="casos__title">Casos de éxito</h2>
+      </div>
+    </div>
+
+    <!-- Grid de tarjetas -->
+    <div class="casos__grid">
+      {
+        casos.map((caso, i) => (
+          <div
+            class={`casos__card casos__card--${caso.variante} animate-on-scroll`}
+            style={`transition-delay: ${i * 0.08}s`}
+          >
+            <h3 class="casos__card-empresa">{caso.empresa}</h3>
+            <p class="casos__card-tema">{caso.tema}</p>
+            <p class="casos__card-resultado">{caso.resultado}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

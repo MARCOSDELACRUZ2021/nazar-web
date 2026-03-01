@@ -1941,3 +1941,325 @@ select {
 		justify-content: space-between;
 	}
 }
+/* ============================================================
+   CASOS DE ÉXITO
+   ============================================================ */
+
+.casos {
+	padding: var(--section-padding) 0;
+	background: #fff;
+	position: relative;
+}
+
+.casos__inner {
+	display: flex;
+	flex-direction: column;
+	gap: 72px;
+}
+
+/* ---- Header ---- */
+.casos__header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.casos__header-visual {
+	display: flex;
+	align-items: center;
+	gap: 28px;
+}
+
+.casos__header-img {
+	width: 600px;
+	height: auto;
+	object-fit: contain;
+	flex-shrink: 0;
+	display: block;
+}
+
+.casos__title {
+    font-family: 'Reenie Beanie', cursive;
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 400;
+    color: var(--color-text);
+    line-height: 1;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    margin-left: -180px;
+}
+
+/* ---- Grid ---- */
+.casos__grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 16px;
+}
+
+/* ---- Base de tarjeta ---- */
+.casos__card {
+	border-radius: var(--radius-lg);
+	padding: 40px 28px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	gap: 10px;
+	transition: transform var(--transition), box-shadow var(--transition);
+	cursor: default;
+}
+
+.casos__card:hover {
+	transform: translateY(-4px);
+	box-shadow: var(--shadow-md);
+}
+
+/* ---- Variante: dark (negro) ---- */
+.casos__card--dark {
+	background: var(--color-bg-dark);
+	border: none;
+}
+
+.casos__card--dark:hover {
+	box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+}
+
+/* ---- Variante: gray (gris claro, sin borde visible) ---- */
+.casos__card--gray {
+	background: #f5f4f2;
+	border: none;
+}
+
+/* ---- Variante: white (blanca con borde) ---- */
+.casos__card--white {
+	background: #fff;
+	border: 1.5px solid var(--color-border);
+}
+
+/* ---- Textos ---- */
+.casos__card-empresa {
+	font-size: 17px;
+	font-weight: 700;
+	letter-spacing: -0.02em;
+	line-height: 1.2;
+	color: var(--color-text);
+	margin-bottom: 2px;
+}
+
+.casos__card--dark .casos__card-empresa {
+	color: #fff;
+}
+
+.casos__card-tema {
+	font-size: 14px;
+	font-weight: 400;
+	color: var(--color-text);
+	line-height: 1.55;
+}
+
+.casos__card--dark .casos__card-tema {
+	color: rgba(255, 255, 255, 0.75);
+}
+
+.casos__card-resultado {
+	font-size: 14px;
+	font-weight: 400;
+	font-style: italic;
+	color: var(--color-text-muted);
+	line-height: 1.6;
+	margin-top: 6px;
+}
+
+.casos__card--dark .casos__card-resultado {
+	color: rgba(255, 255, 255, 0.55);
+}
+
+/* ---- Responsive ---- */
+
+/* Móvil pequeño: hasta 480px */
+@media (max-width: 480px) {
+	.casos__inner {
+		gap: 40px;
+	}
+
+	.casos__header-visual {
+		flex-direction: column;
+		align-items: center;
+		gap: 8px;
+		text-align: center;
+	}
+
+	.casos__header-img {
+		width: 200px;
+	}
+
+	.casos__title {
+		margin-left: 0;
+		white-space: normal;
+		font-size: 36px;
+		text-align: center;
+	}
+
+	.casos__card {
+		padding: 32px 20px;
+	}
+}
+
+/* Móvil grande: 481px–639px */
+@media (min-width: 481px) and (max-width: 639px) {
+	.casos__header-visual {
+		flex-direction: column;
+		align-items: center;
+		gap: 8px;
+	}
+
+	.casos__header-img {
+		width: 260px;
+	}
+
+	.casos__title {
+		margin-left: 0;
+		white-space: nowrap;
+		text-align: center;
+	}
+}
+
+/* Tablet: 640px–767px — grid 2 columnas */
+@media (min-width: 640px) {
+	.casos__grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+/* Tablet grande: 768px+ */
+@media (min-width: 768px) {
+	.casos {
+		padding: var(--section-padding-lg) 0;
+	}
+
+	.casos__header-img {
+		width: 400px;
+	}
+
+	.casos__title {
+		margin-left: -120px;
+	}
+
+	.casos__card {
+		padding: 44px 32px;
+	}
+}
+
+/* Desktop: 1024px+ — grid 3 columnas, imagen plena */
+@media (min-width: 1024px) {
+	.casos__grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.casos__header-img {
+		width: 600px;
+	}
+
+	.casos__title {
+		margin-left: -180px;
+	}
+}
+
+/* ============================================================
+   CONTACTO — Botón WhatsApp
+   ============================================================ */
+
+.contact {
+	padding: var(--section-padding) 0;
+	background: #fff;
+}
+
+.contact__inner {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 48px;
+}
+
+/* ---- Lado botón ---- */
+.contact__left {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.contact__btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 20px;
+	background: #0a0a0a;
+	color: #fff;
+	border: none;
+	border-radius: 999px;
+	padding: 26px 60px;
+	font-family: var(--font-sans);
+	font-size: 30px;
+	font-weight: 700;
+	cursor: pointer;
+	transition: transform var(--transition), opacity var(--transition), box-shadow var(--transition);
+	white-space: nowrap;
+}
+
+.contact__btn:hover {
+	transform: translateY(-3px);
+	opacity: 0.88;
+	box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+}
+
+/* ---- Lado imagen ---- */
+.contact__right {
+	display: flex;
+	justify-content: center;
+}
+
+.contact__img {
+	width: 100%;
+	max-width: 340px;
+	height: auto;
+	object-fit: contain;
+}
+
+/* ---- Responsive ---- */
+@media (min-width: 768px) {
+	.contact {
+		padding: var(--section-padding-lg) 0;
+	}
+
+	.contact__inner {
+		flex-direction: row;
+		justify-content: center;
+		gap: 80px;
+	}
+
+	.contact__img {
+		max-width: 420px;
+	}
+}
+
+@media (min-width: 1024px) {
+	.contact__inner {
+		gap: 120px;
+	}
+
+	.contact__img {
+		max-width: 480px;
+	}
+}
+
+@media (max-width: 480px) {
+	.contact__btn {
+		font-size: 22px;
+		padding: 20px 40px;
+		gap: 14px;
+	}
+
+	.contact__img {
+		max-width: 260px;
+	}
+}
