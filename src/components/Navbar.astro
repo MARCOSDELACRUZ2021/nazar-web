@@ -1,10 +1,9 @@
 ---
 const navLinks = [
+	{ label: 'Soluciones', href: '#soluciones' },
 	{ label: 'Sobre mí', href: '#sobre-mi' },
-	{ label: 'El consultor', href: '#el-consultor' },
-	{ label: 'El profesor', href: '#el-profesor' },
-	{ label: 'El empresario', href: '#el-empresario' },
-	{ label: 'El ciudadano', href: '#el-ciudadano' },
+	{ label: 'Casos de éxito', href: '#casos-exito' },
+	{ label: 'Contacto', href: '#contacto' },
 ];
 ---
 
@@ -29,10 +28,6 @@ const navLinks = [
 			))}
 		</ul>
 
-		<a href="#contacto" class="navbar__cta">
-			Contacto
-		</a>
-
 		<button class="navbar__toggle" id="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
 			<span class="navbar__toggle-line"></span>
 			<span class="navbar__toggle-line"></span>
@@ -48,7 +43,6 @@ const navLinks = [
 				</li>
 			))}
 		</ul>
-		<a href="#contacto" class="navbar__mobile-cta">Contacto</a>
 	</div>
 </nav>
 
@@ -70,7 +64,7 @@ const navLinks = [
 		document.body.style.overflow = mobileMenu?.classList.contains('open') ? 'hidden' : '';
 	});
 
-	document.querySelectorAll('.navbar__mobile-link, .navbar__mobile-cta').forEach(link => {
+	document.querySelectorAll('.navbar__mobile-link').forEach(link => {
 		link.addEventListener('click', () => {
 			menuToggle?.classList.remove('active');
 			mobileMenu?.classList.remove('open');
