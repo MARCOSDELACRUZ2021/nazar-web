@@ -1987,6 +1987,7 @@ select {
     letter-spacing: 0.02em;
     white-space: nowrap;
     margin-left: -180px;
+    margin-top: 20px;
 }
 
 /* ---- Grid ---- */
@@ -2090,7 +2091,7 @@ select {
 	}
 
 	.casos__header-img {
-		width: 200px;
+		width: 340px;
 	}
 
 	.casos__title {
@@ -2098,6 +2099,7 @@ select {
 		white-space: normal;
 		font-size: 36px;
 		text-align: center;
+		margin-top: 16px;
 	}
 
 	.casos__card {
@@ -2114,13 +2116,14 @@ select {
 	}
 
 	.casos__header-img {
-		width: 260px;
+		width: 400px;
 	}
 
 	.casos__title {
 		margin-left: 0;
 		white-space: nowrap;
 		text-align: center;
+		margin-top: 16px;
 	}
 }
 
@@ -2138,11 +2141,12 @@ select {
 	}
 
 	.casos__header-img {
-		width: 400px;
+		width: 540px;
 	}
 
 	.casos__title {
 		margin-left: -120px;
+		margin-top: 24px;
 	}
 
 	.casos__card {
@@ -2162,6 +2166,7 @@ select {
 
 	.casos__title {
 		margin-left: -180px;
+		margin-top: 28px;
 	}
 }
 
